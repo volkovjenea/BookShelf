@@ -1,35 +1,22 @@
 <h1>Listing authors</h1>
-<<<<<<< Updated upstream
  <%= link_to 'New author',  new_author_path(@author) %>
 <table>
-  <tr>
-
-=======
-  <%= link_to 'New author',  new_author_path(@author) %>
-<table>
-  <tr>
->>>>>>> Stashed changes
-    <th>Name</th>
-    <th>Biography</th>
-  </tr>
- 
-<<<<<<< Updated upstream
-   <% @author.each do |author| %>
-=======
-  <% @authors.each do |author| %>
->>>>>>> Stashed changes
+   <tr>
+     <th>Name</th>
+     <th>Biography</th>
+   </tr>
+   <% @authors.each do |author| %>
     <tr>
       <td><%= author.name %></td>
       <td><%= author.bio %></td>
       <td><%= link_to 'Show', author_path(author) %></td>
       <td><%= link_to 'Edit', edit_author_path(author) %></td>
-      <td><%= link_to 'Destroy', author_path(author),
+      <td><%= link_to 'Destroy',
+              author_path(author),
               method: :delete,
-              data: {confirm: 'Are you sure?' } %></td>
+              data: {confirm: 'Are you sure?' }
+          %>
+      </td>
     </tr>
   <% end %>
-<<<<<<< Updated upstream
 </table>
-=======
-</table>
->>>>>>> Stashed changes

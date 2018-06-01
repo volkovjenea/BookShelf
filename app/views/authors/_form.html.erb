@@ -1,59 +1,26 @@
 <%= form_with model: @author, local: true do |form| %>
-<<<<<<< Updated upstream
-	<% if @author.errors.any? %>
-	 <div id="error_explanation">
-	 	<h2>
-	 		<%= pluralize(@author.errors.count, "error") %> prohibited
-	 		this author form being saved:
-
-	 	</h2>
-	 	<ul>
+  <% if @author.errors.any? %>
+  <div id="error_explanation">
+   	<h2>
+   	  <%= pluralize(@author.errors.count, "error") %> prohibited
+   	  this author form being saved:
+   	</h2>
+      <ul>
         <% @author.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
-    </div>
+  </div>
   <% end %>
- <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
- 
-=======
-  <% if @author.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-      <%= pluralize(@author.errors.count, "error") %> prohibited
-	 		this author form being saved:
-      </h2>
-        <ul>
-        <% @author.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
-        <% end %>
-        </ul>
-    </div>
-  <% end %>
-
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </p>
-
->>>>>>> Stashed changes
   <p>
     <%= form.label :bio %><br>
     <%= form.text_area :bio %>
   </p>
-
-<<<<<<< Updated upstream
-   <p>
-    <%= form.submit %>
-  </p>
- 
-<% end %>
-=======
   <p>
     <%= form.submit %>
   </p>
 <% end %>
->>>>>>> Stashed changes

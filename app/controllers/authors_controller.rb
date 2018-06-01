@@ -2,6 +2,8 @@
 # frozen_string_literal: true
 
 class AuthorsController < ApplicationController
+  before_action :find_author, only: %i[show edit update destroy] 
+
   def index
     @authors = Author.all
   end
@@ -43,7 +45,11 @@ class AuthorsController < ApplicationController
   end
 
   private
-
+  
+  def find_author
+    @author = Author.find(params[:id])
+  end
+ 
   def author_params
     params.require(:author).permit(:name, :bio)
   end
