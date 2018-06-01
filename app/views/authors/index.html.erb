@@ -1,11 +1,11 @@
 <h1>Listing authors</h1>
 <%= link_to 'New author',  new_author_path(@author) %>
 <table>
-   <tr>
-     <th>Name</th>
-     <th>Biography</th>
-   </tr>
-   <% @authors.each do |author| %>
+  <tr>
+    <th>Name</th>
+    <th>Biography</th>
+  </tr>
+  <% @authors.each do |author| %>
     <tr>
       <td><%= author.name %></td>
       <td><%= author.bio %></td>
