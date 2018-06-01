@@ -1,21 +1,25 @@
 <h1>Listing authors</h1>
- <%= link_to 'New author',  new_author_path(@author) %>
+<%= link_to 'New author',  new_author_path(@author) %>
 <table>
   <tr>
-
     <th>Name</th>
     <th>Biography</th>
   </tr>
- 
-   <% @author.each do |author| %>
+  <% @authors.each do |author| %>
     <tr>
       <td><%= author.name %></td>
       <td><%= author.bio %></td>
       <td><%= link_to 'Show', author_path(author) %></td>
       <td><%= link_to 'Edit', edit_author_path(author) %></td>
-      <td><%= link_to 'Destroy', author_path(author),
-              method: :delete,
-              data: {confirm: 'Are you sure?' } %></td>
+      <td>
+        <%=
+          link_to
+            'Destroy',
+            author_path(author),
+            method: :delete,
+            data: {confirm: 'Are you sure?' }
+        %>
+      </td>
     </tr>
   <% end %>
 </table>
