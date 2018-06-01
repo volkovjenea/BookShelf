@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  before_action :find_book, only: [:show, :edit, :update, :destroy]
+  before_action :find_book, only: %i[show edit update destroy]
 
   def index
     @books = Book.all
