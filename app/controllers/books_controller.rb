@@ -3,7 +3,8 @@
 
 class BooksController < ApplicationController
   before_action :find_book, only: %i[show edit update destroy]
-
+  before_action :all_authors, only: %i[new edit]
+  
   def index
     @books = Book.all
   end
@@ -36,11 +37,15 @@ class BooksController < ApplicationController
 
   private
 
+  def all_authors
+    @authors = Author.all
+  end
+
   def find_book
     @book = Book.find(params[:id])
   end
 
   def book_params
-    params.require(:book).permit(:title, :description, :isbn)
+    params.require(:book).permit(:title, :description, :isbn, :author_ids => [])
   end
 end

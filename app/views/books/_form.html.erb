@@ -25,6 +25,14 @@
     <%= form.text_field :isbn %>
   </p>
   <p>
+    <%= form.label :authors %>
+    <%= form.select :author_ids,
+                    @authors.map {|p| [p.name, p.id]},
+                    {:include_blank => false},
+                    {:multiple => "true"}
+    %>
+    </p>
+  <p>
     <%= form.submit %>
   </p>
 <% end %>
