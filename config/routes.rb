@@ -3,9 +3,10 @@
 
 Rails.application.routes.draw do
   get 'welcome/index'
-
+    resources :welcome
+  root 'welcome#index'
   resources :books
   resources :authors
 
-  root 'welcome#index'
+
 end
