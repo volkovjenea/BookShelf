@@ -1,3 +1,25 @@
 // Place all the styles related to the Authors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body.authors{
+  font-family: Bowlby One SC;
+  background: linear-gradient(#FFFFFF,#bdc3c7, #2c3e50,#000000); 
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+a:hover{
+  color:white;
+  text-decoration: none;
+}
+.t1{
+  position: relative;
+  margin-top: 3vw;  
+  text-align: center;
+  color: #212529;
+}
+.img-fluid{
+  height: 350px;
+  width:400px;
+}
