@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
- 
+body.welcome{
   background-image: url(https://cdn.aarp.net/content/dam/aarp/money/budgeting_savings/2016/04/1140-yeager-sell-your-used-books.imgcache.rev6feda141288df73e8fd100822bb375ea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -48,14 +47,5 @@ body{
   font-family: Bowlby One SC;
 }
 
-@font-face {
-  font-family: 'Sunflower', sans-serif;
-  font-family: 'Dosis', sans-serif;
-  font-family: 'Abril Fatface', cursive;
-  font-family: 'Poor Story', cursive;
-  font-family: 'Bowlby One SC', cursive;
-  font-family: 'Monda', sans-serif;
-  font-family: 'Julius Sans One', sans-serif;
-  font-family: 'Carter One', cursive;
-   }
+
 
