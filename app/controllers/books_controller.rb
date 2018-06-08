@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   before_action :all_authors, only: %i[new edit]
   
   def index
-    @books = Book.all
+    @books = Book.page(params[:page])
   end
 
   def new
