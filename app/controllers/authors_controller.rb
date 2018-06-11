@@ -5,7 +5,7 @@ class AuthorsController < ApplicationController
   before_action :find_author, only: %i[show edit update destroy] 
 
   def index
-    @authors = Author.all
+    @authors = Author.page(params[:page])
   end
 
   def new

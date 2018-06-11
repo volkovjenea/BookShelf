@@ -1,84 +1,23 @@
-<body class="books" ></body>
+<body class="authors" ></body>
 <% link_to 'New author',  new_author_path(@author) %>
 <div class="container">
   <h1 class="t1">Listing authors</h1>
-    <div class="row text-center text-lg-left">
-
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-
+  <div class="row text-center text-lg-left">
+    <% @authors.each do |author| %>
+      <div class="col-md-3">
+        <div class="photo photo-type-line">
+            <%= link_to(image_tag("http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv", 
+              alt: "book", title: "book", class: "img-fluid img-thumbnail"), author_path(author), class: "d-block") %>
+          <p><%=link_to author.name, author_path(author) %></p>
         </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t3.gstatic.com/images?q=tbn:ANd9GcQP6TiF7jqOtTtFse0Ypu-4TZ6cw1B5c2JKhpDM_LSsBBA_GSlM" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-10 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4">
-            <img class="img-fluid img-thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRyWVTOSQB5minSXs7A2tkOX3LDnIN0ms7iFjUo2wbtAlg7lG2y" alt="">
-          <p class="bookname">A.P. Cehov "Krijovnik"</p>
-        </a>
-        </div>
-      </div>
+      </div>  
+    <% end %>
+</div>    
 </div>
+  <div class="paginate">
+    <%= paginate @authors %>
+  </div>
+
 <!--<table>
   <tr>
     <th>Name</th>
