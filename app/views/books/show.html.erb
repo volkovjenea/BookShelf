@@ -26,7 +26,10 @@
   </div>
   <div class="row">
     <div class="col" id="comments">
-      
+      <h3><%= @book.comments.count %> Comments </h3>
+      <%= render @book.comments %>
+      <h5>Add a comment:</h5>
+      <%= render 'comments/form' %>
     </div>
   </div>
 </div>

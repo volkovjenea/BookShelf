@@ -1,0 +1,12 @@
+<%= form_for([@book, @book.comments.build]) do |comm| %>
+  <p>
+    <%= comm.label :name %>
+    <%= comm.text_field :name %>
+  <p>
+    <%= comm.label :text %>
+    <%= comm.text_area :text %>
+  </p>
+  <p>
+    <%= comm.submit %>
+  </p>
+<% end %>
