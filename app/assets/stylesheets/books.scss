@@ -1,12 +1,17 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body.books,body.show_book{
+  font-family: Bowlby One SC;
+  background-image: url("https://img2.goodfon.ru/original/1680x1050/4/f6/biblioteka-knigi-raznye-mnogo.jpg  ");
+  background-size: cover;
+}
 a{
-  color:white;
+  color: #212529;
   text-decoration: none;
 }
 a:hover{
-  color:white;
+  color: #212529;
   text-decoration: none;
 }
 .t1{
@@ -31,6 +36,11 @@ p{
     line-height: 30px;
     text-decoration: none;
     border: 1px solid white;
+    color:white;
+}
+.container{
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
 }
 .col-sm{
   margin-top:3vw;
@@ -46,5 +56,5 @@ p{
   background-color:white;
   width:540px;
   height:350px;
-  border-radius:3px;
+  border-radius:15px;
 }

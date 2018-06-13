@@ -3,11 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.welcome{
-  background-image: url(https://cdn.aarp.net/content/dam/aarp/money/budgeting_savings/2016/04/1140-yeager-sell-your-used-books.imgcache.rev6feda141288df73e8fd100822bb375ea.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover; 
+  background-image: url("https://cdn.aarp.net/content/dam/aarp/money/budgeting_savings/2016/04/1140-yeager-sell-your-used-books.imgcache.rev6feda141288df73e8fd100822bb375ea.jpg");
+  background-size: cover;
 }
 .navbar{
   border-bottom-left-radius: 25px;
