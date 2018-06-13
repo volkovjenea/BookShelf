@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.books,body.show_book{
   font-family: Bowlby One SC;
-  background-image: url("https://img2.goodfon.ru/original/1680x1050/4/f6/biblioteka-knigi-raznye-mnogo.jpg  ");
+  background-image: url("https://img2.goodfon.ru/original/1680x1050/4/f6/biblioteka-knigi-raznye-mnogo.jpg");
   background-size: cover;
 }
 a{
@@ -22,7 +22,7 @@ a:hover{
 }
 .img-fluid{
   height: 350px;
-  width:400px;
+  width: 400px;
 }
 p{
   font-family: Monda;
@@ -36,25 +36,25 @@ p{
     line-height: 30px;
     text-decoration: none;
     border: 1px solid white;
-    color:white;
+    color: white;
 }
 .container{
   background: rgba(255, 255, 255, 0.6);
   border-radius: 30px;
 }
 .col-sm{
-  margin-top:3vw;
+  margin-top: 3vw;
 }
 .col-sm-3{
-  margin-top:3vw;
+  margin-top: 3vw;
 }
 .col-sm-12{
-  position:absolute;
-  opacity:0.7;
-  margin-left:280px;
-  margin-top:3vw;
-  background-color:white;
-  width:540px;
-  height:350px;
-  border-radius:15px;
+  position: absolute;
+  opacity: 0.7;
+  margin-left: 280px;
+  margin-top: 3vw;
+  background-color: white;
+  width: 540px;
+  height: 350px;
+  border-radius: 15px;
 }
