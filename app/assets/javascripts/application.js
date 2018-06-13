@@ -17,6 +17,5 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap-select
-//= require bootstrap/alert
-//= require bootstrap/dropdown
+//= require selectize
 //= require_tree .

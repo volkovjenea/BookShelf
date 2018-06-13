@@ -1,5 +1,7 @@
 @import "bootstrap";
 @import "/\*";
+@import "selectize";
+@import "selectize.bootstrap3";
 @font-face {
   font-family: 'Sunflower', sans-serif;
   font-family: 'Dosis', sans-serif;
@@ -12,7 +14,7 @@
    }
 body{
   font-family: Bowlby One SC;
-  background: linear-gradient(#FFFFFF,#bdc3c7, #2c3e50,#000000);
-  min-height:47.5vw;
+  background: linear-gradient(#FFFFFF,#bdc3c7, #2c3e50,#000000) no-repeat center center fixed;;
+  background-size: cover;
 }
    

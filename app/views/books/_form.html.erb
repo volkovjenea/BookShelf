@@ -67,9 +67,8 @@
             </div>
             <div class="form-group">
               <%= form.select :author_ids,
-                    @authors.map {|p| [p.name, p.id]},
-                    {:include_blank => false},
-                    {:multiple => "true",class: "multiselect-ui form-control "}
+                    @authors.all.pluck(:name, :id),{},
+                    { multiple: true, class: "selectize", placeholder: "Choose the author:"}
               %>
             </div>
             <p><%= form.submit class: "btn btn-primary pull-right" %></p>
