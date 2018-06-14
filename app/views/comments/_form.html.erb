@@ -1,10 +1,17 @@
 <%= form_for([@book, @book.comments.build]) do |comm| %>
-  <p>
-    <%= comm.text_field :name , class: "form-control", placeholder: "Name"%>
-  <p>
-    <%= comm.text_area :text , class: "form-control", placeholder: "Comment" %>
-  </p>
+  <div class="row">
+    <div class="col-sm-6">
+      <p>
+        <%= comm.text_field :name , class: "form-control", placeholder: "Name"%>
+      </p>
+      <p>
+        <%= comm.text_area :text , class: "form-control", placeholder: "Comment" %>
+      </p>
   <p>
     <%= comm.submit class: "btn btn-primary pull-right" %>
   </p>
+  </div>
+
+  
+  
 <% end %>
