@@ -1,26 +1,45 @@
+<body class="books"></body>
 <%= form_with model: @author, local: true do |form| %>
   <% if @author.errors.any? %>
-    <div id="error_explanation">
+    <div id = "error_explanation">
       <h2>
         <%= pluralize(@author.errors.count, "error") %> prohibited
-        this author form being saved:
+        this article form being saved:
       </h2>
       <ul>
         <% @author.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li>
+            <%= msg %>
+          </li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :bio %><br>
-    <%= form.text_area :bio %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+    <div class="container form">
+    <div class = "col-sm-6">
+      <div class = "form-area">  
+        <form role = "form">
+          <br >
+            <h3>New Author</h3>
+            <div class = "form-group">
+              <%= form.text_field :name, class: "form-control", placeholder: "Name"%>
+            </div>
+            <div class = "form-group">
+             <%= form.text_area :bio, class: "form-control", placeholder: "Biography" %>
+            </div>
+            <div class = "form-group">
+              <%= form.select :book_ids,
+                @books.all.pluck(:title, :id),
+                {},
+                { multiple: true, class: "selectize", placeholder: "Choose the book:"}
+              %>
+            </div>
+            <p>
+              <%= form.submit class: "btn btn-primary pull-right" %>
+            </p>
+        </form>
+      </div>
+    </div>
+</div>
 <% end %>
+

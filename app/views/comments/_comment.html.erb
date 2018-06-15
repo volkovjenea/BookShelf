@@ -1,10 +1,7 @@
-<div class="container">
-  <div class="row" id="white-box">
-    <div class="col-sm-5">
-      <div class="panel panel-white post panel-shadow">
-        <div class="post-heading">
-          <div class="pull-left meta">
-            <div class="close"> 
+<div class="comment mb-2 row">
+  <div class="comment-content col-md-11 col-sm-10">
+    <div class="comment-body">
+      <div class="close"> 
               <span aria-hidden="true">
                 <%=
                   link_to(
@@ -15,20 +12,19 @@
                   ) 
                 %>
               </span>
-            </div>
-            <div class="title h5">
-              <%= comment.name %>
-              made a post.
-            </div>
-            <h6 class="text-muted time">
-              <%= time_ago_in_words(comment.created_at)%>
-            </h6>
-          </div>
-        </div> 
-        <div class="post-description"> 
-          <p><%= comment.text %></p>
+            </div>  
+        <div class="titles">
+          <h5><%= comment.name %> made a post.</h5>
         </div>
-      </div>
+        <h6 class="text-muted time">
+          <%= time_ago_in_words(comment.created_at)%>
+        </h6> 
+        <div class="post-description"> 
+          <p>
+            <%= comment.text %>
+          </p>
+        </div>
     </div>
   </div>
 </div>
+

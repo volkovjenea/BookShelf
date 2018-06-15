@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.books,body.show_book{
   font-family: Bowlby One SC;
-  background-image: url("https://img2.goodfon.ru/original/1680x1050/4/f6/biblioteka-knigi-raznye-mnogo.jpg");
+  background: url("https://img2.goodfon.ru/original/1680x1050/4/f6/biblioteka-knigi-raznye-mnogo.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 a{
@@ -46,10 +46,15 @@ p{
 .col-sm{
   background: rgba(255, 255, 255, 0.6);
   margin-top: 3vw;
-  margin-right: 3vw;
+  margin-right: 300px;
   border-radius:10px;
+
 }
 .col-sm-3{
   margin-top: 3vw;
+}
+.white-box{
+  width: 40%;
+  background: rgba(255,255,255,0.6);
 }
 

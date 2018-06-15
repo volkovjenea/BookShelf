@@ -1,6 +1,6 @@
 <body class = "show_book"></body>
 <div class = "container">
-  <div class = "row">
+  <div class = "row"> 
     <div class = "col-sm-3">
       <%= image_tag("http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv", alt: "book", title: "book", class: "img-fluid img-thumbnail") %>
     </div>
@@ -23,11 +23,15 @@
       </p>
     </div>
   </div>
-  <div class = "row">
+  <div class="lft">
     <div class = "col" id = "comments">
-      <h3><%= @book.comments.count %> Comments </h3>
+      <h3>
+        <%= @book.comments.count %> Comments 
+      </h3>
       <%= render @book.comments %>
-      <h5>Add a comment:</h5>
+      <h5>
+        Add a comment:
+      </h5>
       <%= render 'comments/form' %>
     </div>
   </div>

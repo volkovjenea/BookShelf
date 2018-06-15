@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12"></div>
-    <div class="col-sm-3">
-      <%= image_tag("http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv", alt: "book", title: "book", class: "img-fluid img-thumbnail") %>
+<body class = "show_author"></body>
+<div class = "container">
+  <div class = "row"> 
+    <div class = "col-sm-3">
+      <%= image_tag("http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv", alt: "book", title: "author", class: "img-fluid img-thumbnail") %>
     </div>
     <div class="col-sm">
       <p>
@@ -13,13 +13,25 @@
       <strong>Biography:</strong>
       <%= @author.bio %>
     </p>
+     <p>
+        <strong>Book authors:</strong>
+        <%= @author.books.map(&:title) %>
+      </p>
     </div>
   </div>
-  <div class="row">
-    <div class="col" id="comments">
-      
+
+  <div class="lft">
+    <div class = "col" id = "comments">
+      <h3>
+        <%= @author.comments.count %> Comments 
+      </h3>
+      <%= render @author.comments %>
+      <h5>
+        Add a comment:
+      </h5>
+      <%= render 'comments/form1' %>
     </div>
   </div>
 </div>
 <% link_to 'Edit', edit_author_path(@author) %>
-<%= link_to 'Back', authors_path %>
+<%= link_to 'Back', authors_path ,class: "btn btn-primary pull-right" %>
