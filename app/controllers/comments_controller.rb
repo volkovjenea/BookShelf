@@ -1,24 +1,44 @@
 class CommentsController < ApplicationController
-
+  before_action :set_up_commentable
+  
   def create
-    @author = Author.find(params[:author_id])
-    @comment = @author.comments.create(params[:comment].permit(:text, :name))
-    redirect_to author_path(@author)
-
-    @book = Book.find(params[:book_id])
-    @comment = @book.comments.create(params[:comment].permit(:text, :name))
-    redirect_to book_path(@book)
+    @comment = @commentable.comments.create(comment_params)
+    if @commentable.is_a? Book
+      redirect_to book_path(@commentable)
+    else
+      redirect_to author_path(@commentable)
+    end
   end
 
   def destroy
-    @author = Author.find(params[:author_id])
-    @comment = @author.comments.find(params[:id])
-    @comment.destroy
-    redirect_to author_path(@author)
+   @comment = Comment.find(params[:comment_id])
+     @comment.destroy
+    if @commentable.is_a? Book
+      redirect_to book_path(@commentable)
+    else
+      redirect_to author_path(@commentable)
+    end
+  end
 
-		@book = Book.find(params[:book_id])
-		@comment = @book.comments.find(params[:id])
-		@comment.destroy
-		redirect_to book_path(@book)
+  def get_book
+    @book = Book.find(params[:book_id])
+  end
+
+  def get_author
+    @author = Author.find(params[:author_id])
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:name, :text)
+  end
+
+  def set_up_commentable
+    if params[:book_id]
+      @commentable =  get_book
+    else
+      @commentable = get_author
+    end 
   end
 end
