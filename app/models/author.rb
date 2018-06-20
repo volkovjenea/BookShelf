@@ -4,4 +4,5 @@ class Author < ApplicationRecord
   has_many :comments, as: :commentable
   validates :name, presence: true
   validates :bio, presence: true
+  has_one_attached :image
 end

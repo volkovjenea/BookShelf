@@ -1,34 +1,36 @@
-<div class="comment mb-2 row">
-    <div class="comment-content col-md-11 col-sm-10">
-    <div class="comment-body">
-      <div class="close"> 
-        <span aria-hidden="true">
+<div class = "comment mb-2 row">
+  <div class = "comment-content col-md-11 col-sm-10">
+    <div class = "comment-body">
+      <div class = "close">
+        <span aria-hidden = "true">
           <%=
-          if defined? @book != nil
-            link_to(
-              raw("&times;"),
-              book_comment_path(@book, comment_id: comment.id),
-              method: :delete,
-              data: {confirm: 'Are you sure?,'},
-            )
-          else
-            link_to(
-              raw("&times;"),
-              author_comment_path(@author, comment_id: comment.id),
-              method: :delete,
-              data: {confirm: 'Are you sure?,'},
+            if defined? @book != nil
+              link_to(
+                raw("&times;"),
+                book_comment_path(@book, comment_id: comment.id),
+                method: :delete,
+                data: {confirm: 'Are you sure?,'},
+              )
+            else
+              link_to(
+                raw("&times;"),
+                author_comment_path(@author, comment_id: comment.id),
+                method: :delete,
+                data: {confirm: 'Are you sure?,'},
               )
             end
           %>
         </span>
-      </div>  
-      <div class="titles">
-        <h5><%= comment.name %> made a post.</h5>
       </div>
-      <h6 class="text-muted time">
+      <div class = "titles">
+        <h5>
+          <%= comment.name %> made a post.
+        </h5>
+      </div>
+      <h6 class = "text-muted time">
         <%= time_ago_in_words(comment.created_at)%>
       </h6> 
-      <div class="post-description"> 
+      <div class = "post-description">
         <p>
           <%= comment.text %>
         </p>

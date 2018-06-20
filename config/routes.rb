@@ -13,6 +13,4 @@ Rails.application.routes.draw do
     resources :authors do
       resources :comments
   end
-
-
 end

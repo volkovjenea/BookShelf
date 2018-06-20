@@ -2,25 +2,28 @@
 <div class = "container">
   <div class = "row"> 
     <div class = "col-sm-3">
-      <%= image_tag("http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv", alt: "book", title: "author", class: "img-fluid img-thumbnail") %>
+      <% if @author.image.attached? %>
+        <p>
+          <%= image_tag (@author.image), alt: "image", class: "img-fluid img-thumbnail" %>
+        </p>
+      <% end %>
     </div>
-    <div class="col-sm">
+    <div class = "col-sm">
       <p>
-      <strong>Name:</strong>
-      <%= @author.name %>
-    </p>
-    <p>
-      <strong>Biography:</strong>
-      <%= @author.bio %>
-    </p>
-     <p>
+        <strong>Name:</strong>
+        <%= @author.name %>
+      </p>
+      <p>
+        <strong>Biography:</strong>
+        <%= @author.bio %>
+      </p>
+      <p>
         <strong>Book authors:</strong>
         <%= @author.books.map(&:title) %>
       </p>
     </div>
   </div>
-
-  <div class="lft">
+  <div class = "lft">
     <div class = "col" id = "comments">
       <h3>
         <%= @author.comments.count %> Comments 

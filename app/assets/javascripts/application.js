@@ -18,4 +18,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap-select
 //= require selectize
+//= require activestorage
 //= require_tree .

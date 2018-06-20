@@ -5,4 +5,5 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :isbn, presence: true, uniqueness: true
+  has_one_attached :image
 end

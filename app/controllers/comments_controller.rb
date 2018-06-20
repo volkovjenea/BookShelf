@@ -1,3 +1,6 @@
+#
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :set_up_commentable
   
@@ -11,8 +14,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-   @comment = Comment.find(params[:comment_id])
-     @comment.destroy
+    @comment = Comment.find(params[:comment_id])
+    @comment.destroy
     if @commentable.is_a? Book
       redirect_to book_path(@commentable)
     else
@@ -36,9 +39,9 @@ class CommentsController < ApplicationController
 
   def set_up_commentable
     if params[:book_id]
-      @commentable =  get_book
+      @commentable = get_book
     else
       @commentable = get_author
-    end 
+    end
   end
 end

@@ -1,18 +1,27 @@
 <body class = "books" ></body>
 <% link_to 'New Book', new_book_path(@book) %>
 <div class = "container">
-  <h1 class = "t1">Listing books</h1>
+  <h1 class = "t1">
+    Listing books
+  </h1>
   <div class = "row text-center text-lg-left">
     <% @books.each do |book| %>
       <div class = "col-md-3">
         <div class = "photo photo-type-line">
-            <%= link_to(image_tag("http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv", 
-              alt: "book", title: "book", class: "img-fluid img-thumbnail"), book_path(book), class: "d-block") %>
-          <p><%=link_to book.title, book_path(book) %></p>
+          <%=
+            link_to(
+              image_tag("http://t3.gstatic.com/images?q=tbn:ANd9GcQZeQAugEeobe5rlhfPm9PcR0K_1L86yWuL2seqOWquDsBXjFBv", alt: "book", title: "book", class: "img-fluid img-thumbnail"),
+              book_path(book),
+              class: "d-block"
+            )
+          %>
+          <p>
+            <%=link_to book.title, book_path(book) %>
+          </p>
         </div>
       </div>
     <% end %>
-  </div>    
+  </div>
 </div>
 <div class = "paginate">
   <%= paginate @books %>
