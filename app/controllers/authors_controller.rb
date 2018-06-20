@@ -40,12 +40,12 @@ class AuthorsController < ApplicationController
   def all_books
     @books = Book.all
   end
-  
+
   def find_author
     @author = Author.find(params[:id])
   end
- 
+
   def author_params
-    params.require(:author).permit(:name, :bio, :image, :book_ids => [])
+    params.require(:author).permit(:name, :bio, :image, book_ids: [])
   end
 end

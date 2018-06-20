@@ -3,7 +3,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_up_commentable
-  
+
   def create
     @comment = @commentable.comments.create(comment_params)
     if @commentable.is_a? Book
@@ -23,11 +23,11 @@ class CommentsController < ApplicationController
     end
   end
 
-  def get_book
+  def book
     @book = Book.find(params[:book_id])
   end
 
-  def get_author
+  def author
     @author = Author.find(params[:author_id])
   end
 
