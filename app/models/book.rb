@@ -5,9 +5,10 @@ class Book < ApplicationRecord
   has_many :publications
   has_many :authors, through: :publications, source: :author
   has_many :comments, as: :commentable
-  validates :title, presence: true
+  validates :title, presence: true, format: { with: /\A[a-zA-Z]+\z/,
+    message: "Only letters allowed" }
   validates :description, presence: true
-  validates :isbn, presence: true, uniqueness: true
+  validates :isbn, presence: true, uniqueness: true, isbn_format: { with: :isbn13, message: "Isbn number incorrect format" }
   has_one_attached :image
   validate :image_validation
 
@@ -22,4 +23,5 @@ class Book < ApplicationRecord
       end
     end
   end
+
 end

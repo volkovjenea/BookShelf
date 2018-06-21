@@ -89,6 +89,8 @@ GEM
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
+    isbn_validation (1.2.2)
+      activerecord (>= 3)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -231,6 +233,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  isbn_validation
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
