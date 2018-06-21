@@ -39,9 +39,9 @@ class CommentsController < ApplicationController
 
   def set_up_commentable
     if params[:book_id]
-      @commentable = get_book
+      @commentable = book
     else
-      @commentable = get_author
+      @commentable = author
     end
   end
 end

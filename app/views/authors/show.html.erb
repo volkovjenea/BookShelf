@@ -4,7 +4,7 @@
     <div class = "col-sm-3">
       <% if @author.image.attached? %>
         <p>
-          <%= image_tag (@author.image), alt: "image", class: "img-fluid img-thumbnail" %>
+          <%= image_tag (@author.image, alt: "image", class: "img-fluid img-thumbnail" %>
         </p>
       <% end %>
     </div>
