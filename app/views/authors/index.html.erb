@@ -11,11 +11,26 @@
           <% if author.image.attached? %>
             <%=
               link_to(
-                image_tag(author.image, alt: "book", title: "book", class: "img-fluid img-thumbnail"),
+                image_tag(
+                  author.image,
+                  alt: "book",
+                  title: "book",
+                  class: "img-fluid img-thumbnail"
+                ),
                 author_path(author),
                 class: "d-block"
-              ) 
-              %>
+              )
+            %>
+            <% else %>
+        <p>
+          <%=
+            image_tag(
+              ("https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png"),
+              alt: "no_image",
+              class: "img-fluid img-thumbnail"
+            )
+          %>
+        </p>
           <% end %>
           <p>
             <%=link_to author.name, author_path(author) %>

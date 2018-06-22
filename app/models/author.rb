@@ -5,8 +5,14 @@ class Author < ApplicationRecord
   has_many :publications
   has_many :books, through: :publications
   has_many :comments, as: :commentable
-  validates :name, presence: true, format: { with: /\A[a-zA-Z]+\z/,
-    message: "Only letters allowed" }
+  validates(
+    :name,
+    presence: true,
+    format:{
+      with: /\A[a-zA-Z]+\z/,
+      message: "Only letters allowed"
+    }
+  )
   validates :bio, presence: true
   has_one_attached :image
   validate :image_validation

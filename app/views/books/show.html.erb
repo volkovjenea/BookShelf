@@ -4,7 +4,23 @@
     <div class = "col-sm-3">
       <% if @book.image.attached? %>
         <p>
-          <%= image_tag (@book.image), alt: "image", class: "img-fluid img-thumbnail" %>
+          <%=
+            image_tag(
+              @book.image
+            ),
+            alt: "image",
+            class: "img-fluid img-thumbnail"
+          %>
+        </p>
+        <% else %>
+        <p>
+          <%=
+            image_tag(
+              ("https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png"),
+              alt: "no_image",
+              class: "img-fluid img-thumbnail"
+            )
+          %>
         </p>
       <% end %>
     </div>
