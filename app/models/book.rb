@@ -23,7 +23,7 @@ class Book < ApplicationRecord
     uniqueness: true,
     isbn_format:{
       with: :isbn13,
-      message: "Isbn number incorrect format"
+      message: " number incorrect format"
     }
   )
   has_one_attached :image

@@ -17,10 +17,12 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 gem 'bootstrap', '~> 4.1.1'
-gem 'kaminari'
-gem 'bootstrap-select-rails'
-gem 'selectize-rails'
-gem 'pry-rails'
+group :test, :development do
+  gem 'kaminari'
+  gem 'bootstrap-select-rails'
+  gem 'selectize-rails'
+  gem 'pry-rails'
+end
 gem 'mini_magick'
 gem 'isbn_validation'
 gem 'dotenv-rails', groups: [:development, :test]
