@@ -24,10 +24,12 @@
           <% else %>
             <p>
               <%=
-                image_tag(
-                  ("https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png"),
-                  alt: "no_image",
-                  class: "img-fluid img-thumbnail"
+                link_to(
+                  image_tag(
+                    ("https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png"),
+                    alt: "no_image",
+                    class: "img-fluid img-thumbnail"
+                  )
                 )
               %>
             </p>

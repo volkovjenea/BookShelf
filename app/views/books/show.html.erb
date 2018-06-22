@@ -6,10 +6,10 @@
         <p>
           <%=
             image_tag(
-              @book.image
-            ),
-            alt: "image",
-            class: "img-fluid img-thumbnail"
+              (@book.image),
+              alt: "image",
+              class: "img-fluid img-thumbnail"
+            )
           %>
         </p>
         <% else %>
