@@ -1,30 +1,56 @@
-<h1>Listing books</h1>
-<%= link_to 'New Book', new_book_path(@book) %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Isbn</th>
-    <th>Author</th>
-  </tr>
-  <% @books.each do |book| %>
-    <tr>
-      <td><%= book.title %></td>
-      <td><%= book.description %></td>
-      <td><%= book.isbn %></td>
-      <td><%= book.authors.map(&:name) %></td>
-      <td><%= link_to 'Show', book_path(book) %></td>
-      <td><%= link_to 'Edit', edit_book_path(book) %></td>
-      <td>
-        <%=
-          link_to(
-            'Destroy',
-            book_path(book),
-            method: :delete,
-            data: {confirm: 'Are you sure?' } 
-          )
-        %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<body class = "books" ></body>
+<div class = "container">
+  <h1 class = "t1">
+    Listing books
+  </h1>
+  <%= 
+    link_to(
+      'New Book',
+      new_book_path(@book),
+      class: "btn btn-primary pull-right"
+    ) 
+  %>
+  <br></br>
+  <div class = "row text-center text-lg-left">
+    <% @books.each do |book| %>
+      <div class = "col-md-3">
+        <div class = "photo photo-type-line">
+          <% if book.image.attached? %>
+            <%=
+              link_to(
+                image_tag(
+                  book.image,
+                  alt: "book",
+                  title: "book",
+                  class: "img-fluid img-thumbnail"
+                ),
+                book_path(book),
+                class: "d-block"
+              )
+            %>
+          <% else %>
+            <p>
+              <%=
+                link_to(
+                  image_tag(
+                    ("https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png"),
+                    alt: "no_image",
+                    class: "img-fluid img-thumbnail"
+                  ),
+                  book_path(book),
+                  class: "d-block"
+                )
+              %>
+            </p>
+          <% end %>
+          <p>
+            <%=link_to book.title, book_path(book) %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class = "paginate">
+  <%= paginate @books %>
+</div>

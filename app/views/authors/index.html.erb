@@ -1,26 +1,56 @@
-<h1>Listing authors</h1>
-<%= link_to 'New author',  new_author_path(@author) %>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Biography</th>
-  </tr>
-  <% @authors.each do |author| %>
-    <tr>
-      <td><%= author.name %></td>
-      <td><%= author.bio %></td>
-      <td><%= link_to 'Show', author_path(author) %></td>
-      <td><%= link_to 'Edit', edit_author_path(author) %></td>
-      <td>
-        <%=
-          link_to(
-            'Destroy',
-            author_path(author),
-            method: :delete,
-            data: {confirm: 'Are you sure?' }
-          )
-        %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<body class = "authors" ></body>
+<div class = "container">
+  <h1 class = "t1">
+    Listing authors
+  </h1>
+  <%=
+    link_to(
+      'New author',
+      new_author_path(@author),
+      class: "btn btn-primary pull-right"
+    )
+  %>
+  <br></br>
+  <div class = "row text-center text-lg-left">
+    <% @authors.each do |author| %>
+      <div class = "col-md-3">
+        <div class = "photo photo-type-line">
+          <% if author.image.attached? %>
+            <%=
+              link_to(
+                image_tag(
+                  author.image,
+                  alt: "book",
+                  title: "book",
+                  class: "img-fluid img-thumbnail"
+                ),
+                author_path(author),
+                class: "d-block"
+              )
+            %>
+          <% else %>
+            <p>
+              <%= 
+                link_to(
+                  image_tag(
+                    ("https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png"),
+                    alt: "no_image",
+                    class: "img-fluid img-thumbnail"
+                  ),
+                  author_path(author),
+                  class: "d-block"
+                )
+              %>
+            </p>
+          <% end %>
+          <p>
+            <%=link_to author.name, author_path(author) %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class = "paginate">
+  <%= paginate @authors %>
+</div>
