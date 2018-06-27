@@ -1,9 +1,16 @@
 <body class = "authors" ></body>
-<% link_to 'New author',  new_author_path(@author) %>
 <div class = "container">
   <h1 class = "t1">
     Listing authors
   </h1>
+  <%=
+    link_to(
+      'New author',
+      new_author_path(@author),
+      class: "btn btn-primary pull-right"
+    )
+  %>
+  <br></br>
   <div class = "row text-center text-lg-left">
     <% @authors.each do |author| %>
       <div class = "col-md-3">

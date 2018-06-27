@@ -1,9 +1,16 @@
 <body class = "books" ></body>
-<% link_to 'New Book', new_book_path(@book) %>
 <div class = "container">
   <h1 class = "t1">
     Listing books
   </h1>
+  <%= 
+    link_to(
+      'New Book',
+      new_book_path(@book),
+      class: "btn btn-primary pull-right"
+    ) 
+  %>
+  <br></br>
   <div class = "row text-center text-lg-left">
     <% @books.each do |book| %>
       <div class = "col-md-3">

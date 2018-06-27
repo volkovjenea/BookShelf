@@ -31,7 +31,7 @@ class Book < ApplicationRecord
 
   def image_validation
     if image.attached?
-      if image.blob.byte_size > 100_000_0
+      if image.blob.byte_size > 1_000_000
         image.purge
         errors[:base] << 'Image size is too big'
       elsif !image.blob.content_type.starts_with?('image/')
