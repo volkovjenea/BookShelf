@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'chat/show'
   get 'welcome/index'
     resources :welcome
   root 'welcome#index'
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
     resources :authors do
       resources :comments
   end
+  resources :messages, only: [:show]
 end
