@@ -1,0 +1,16 @@
+<body class="chat"></body>
+<div class = "comment mb-2 row">
+  <div class = "comment-content col-md-11 col-sm-10">
+    <div class = "comment-body">
+      <h6 class = "text-muted time">
+        <%= time_ago_in_words(message.created_at)%>
+      </h6> 
+      <div class="message">
+        <p>
+          <%= message.content %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+

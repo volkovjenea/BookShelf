@@ -13,4 +13,5 @@ Rails.application.routes.draw do
       resources :comments
   end
   resources :messages, only: [:show]
+  mount ActionCable.server => '/cable'
 end
