@@ -1,22 +1,21 @@
-
 <%= form_with model: @message, local: true do |mess| %>
-<div class="chat_window">
-  <div class="col-sm-5" id="messages">
-    
-    <%= render @messages %>
+  <div class="chat_window">
+    <div class="col-sm-5" id="messages">
+      <%= render @messages %>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-5">
+        <%=
+          mess.text_field(
+            :content,
+            class: "form-control",
+            id: "message_input",
+            placeholder: "Enter your message"
+          )
+        %>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <div class="col-sm-5">
-    <%=
-      mess.text_field(
-        :content,
-        class: "form-control",
-        placeholder: "Enter your message"
-      )
-    %>
-  </div>
-  </div>
-</div>
 <% end %>
 
 
