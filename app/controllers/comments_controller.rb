@@ -3,7 +3,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_up_commentable
-=begin
+
   def create
     @comment = @commentable.comments.create(comment_params)
     if @commentable.is_a? Book
@@ -44,5 +44,4 @@ class CommentsController < ApplicationController
       @commentable = author
     end
   end
-=end
 end

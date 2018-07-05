@@ -1,9 +1,11 @@
-<%= form_for([@book, @book.comments.build]) do |comm| %>
+<%= form_for([@book, @book.comments.build], remote: true) do |comm| %>
   <div class = "row">
     <div class = "col-sm-5">
+<!--      
       <p>
         <%= comm.text_field :name , class: "form-control", placeholder: "Name"%>
       </p>
+-->      
       <p>
         <%= comm.text_area :text , class: "form-control", placeholder: "Comment" %>
       </p>
@@ -13,3 +15,5 @@
     </div>
   </div>
 <% end %>
+
+

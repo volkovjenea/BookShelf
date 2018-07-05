@@ -3,6 +3,7 @@
 
 class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true
-  validates :name, presence: true
+
   validates :text, presence: true
+  after_create_commit { BroadcastCommentJob.perform_later self }
 end

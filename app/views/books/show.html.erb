@@ -64,7 +64,9 @@
       <h3>
         <%= @book.comments.count %> Comments
       </h3>
+      <div id="comments" >
       <%= render @book.comments %>
+    </div>
       <h5>
         Add a comment:
       </h5>
