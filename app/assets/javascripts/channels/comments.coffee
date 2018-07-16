@@ -19,5 +19,5 @@ App.comments = App.cable.subscriptions.create "CommentsChannel",
   received: (data) ->
     @collection().append(data['comment'])
 
-  speak: ->
-    @perform 'speak'
+  speak:(comment) ->
+    @perform 'speak', comment: comment

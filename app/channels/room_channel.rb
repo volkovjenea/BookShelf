@@ -8,6 +8,6 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create content: data['message']
+    Comment.create.broadcast text: data['comment']
   end
 end
