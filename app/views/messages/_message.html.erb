@@ -2,6 +2,18 @@
 <div class = "comment mb-2 row">
   <div class = "comment-content col-md-11 col-sm-10">
     <div class = "comment-body">
+            <div class = "close">
+        <span aria-hidden = "true">
+          <%=
+              link_to(
+                raw("&times;"),
+                chat_show_path(@message, message_id: message.id),
+                method: :delete,
+                data: {confirm: 'Are you sure?,'},
+              )
+          %>
+        </span>
+      </div>
       <h6 class = "text-muted time">
         <%= time_ago_in_words(message.created_at)%>
       </h6> 

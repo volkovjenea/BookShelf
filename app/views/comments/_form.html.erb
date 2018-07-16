@@ -7,10 +7,14 @@
       </p>
 -->      
       <p>
-        <%= comm.text_area :text , class: "form-control", placeholder: "Comment" %>
-      </p>
-      <p>
-        <%= comm.submit class: "btn btn-primary pull-right" %>
+        <%=
+          comm.text_field(
+            :text,
+            class: "form-control",
+            id: "comment_input",
+            placeholder: "Enter your message"
+          )
+        %>
       </p>
     </div>
   </div>
