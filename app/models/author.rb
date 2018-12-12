@@ -9,7 +9,7 @@ class Author < ApplicationRecord
     :name,
     presence: true,
     format:{
-      with: /\A[a-zA-Z]+\z/,
+      with: /\A[a-zA-Z ]+\z/,
       message: "Only letters allowed"
     }
   )
